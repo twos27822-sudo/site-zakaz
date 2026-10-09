@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой проект — Чёрно-Жёлтый</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar">
+        <div class="logo">SITE-ZAKAZ</div>
+        <ul class="nav-links">
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
+    <section id="hero" class="hero">
+        <h1>САЙТ ПОД ЗАКАЗ</h1>
+        <p>Я делаю сайты, лендинги и чат‑ботов под ваши запросы.</p>
+        <a href="#services" class="btn-primary">Смотреть услуги</a>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2>Услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Визитка</h3>
+                    <p>Стильный одностраничник для презентации себя или проекта.</p>
+                    <p class="price">от 7000 ₽</p>
+                    <button onclick="toggleChat(); document.getElementById('chat-input').focus()">Заказать</button>
+                </div>
+                <div class="service-card">
+                    <h3>Лендинг</h3>
+                    <p>Продающая страница с формой заявки и интеграциями.</p>
+                    <p class="price">от 12000 ₽</p>
+                    <button onclick="openPopup('Заказ лендинга', 'Нужен продающий лендинг? Напишите мне в чат или оставьте контакты!')">Заказать</button>
+                </div>
+                <div class="service-card">
+                    <h3>Чат‑бот</h3>
+                    <p>Простой JS‑бот для сайта или Telegram.</p>
+                    <p class="price">от 5000 ₽</p>
+                    <button onclick="openPopup('Заказ чат‑бота', 'Хотите простого JS‑бота для сайта или Telegram? Напишите мне в чат или оставьте контакты!')">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- ОБО МНЕ -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <p>Привет! Я разработчик сайтов мне 15. Делаю проекты от идеи до запуска.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts" class="section">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p>Готов обсудить ваш проект. Пишите в Telegram или через VK ниже.</p>
+            <div class="contact-info">
+                <p>💬 <a href="https://vk.ru/durty_ru" target="_blank" style="color:#FFD700; text-decoration:underline;">VK</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОПАП (всплывающее окно) -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2 id="popup-title">Заголовок</h2>
+            <p id="popup-desc">Текст сообщения</p>
+        </div>
+    </div>
+
+    <!-- ЧАТ-БОТ (всегда внизу справа) -->
+    <div id="chat-widget">
+        <button id="chat-toggle-btn" onclick="toggleChat()">💬</button>
+        <div id="chat-box">
+            <div class="chat-header">
+                <span class="chat-name">Поддержка</span>
+                <span class="chat-close" onclick="toggleChat()">✕</span>
+            </div>
+            <div id="chat-messages" class="chat-messages"><div class="msg bot-msg">Привет! Чем могу помочь?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Напишите сообщение..." onkeydown="handleEnter(event)">
+                <button onclick="sendMessage()" class="send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
