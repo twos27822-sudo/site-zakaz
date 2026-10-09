@@ -53,14 +53,13 @@ function escapeHtml(text) {
 }
 
 function getBotResponse(input) {
-    const tgLink = 'https://t.me/saitonlinecluh';
-    const vk = 'https://vk.ru/durty_ru';
+    const vk = 'https://vk.com/durty_ru';
     
     if (input.includes('привет')) return 'Привет! Чем могу помочь?';
     if (input.includes('цена')) return 'Цены: Визитка — 7000 ₽, Лендинг — 12000 ₽, Чат‑бот — 5000 ₽.';
     if (input.includes('заказать')) return 'Отлично! Напиши мне в VK: ' + vk
     if (input.includes('обо мне')) return 'Я делаю сайты и чат‑ботов. Под вас.';
-    if (input.includes('контакты')) return 'Вот способы со мной связаться: <a href="' + vk
+    if (input.includes('контакты')) return 'Вот способы со мной связаться: ' + vk
     
     return 'Я не понял. Спроси про "цены", "заказать" или "обо мне", "контакты".';
 }
